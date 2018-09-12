@@ -1,6 +1,6 @@
 Tumor Detect
 ===
-During the summer of 2015, I interned at Medical Image Research Inc. and I created a tumor detection and volumetric measurement tool. After receiving MRI images and data from the University of Illinois at Chicago, I developed an algorithm to aid doctors in tumor detection and the diagnosis of cancers.
+During the summer of 2015, I interned at Medical Image Research Inc. and I created a tumor detection and volumetric measurement tool that works with DICOM files. After receiving the sample MRI images and data from the University of Illinois at Chicago, I developed an algorithm to aid doctors in tumor detection and the diagnosis of cancers.
 
 **Instructions**
 Run 'GUI tumor detect.nb'
