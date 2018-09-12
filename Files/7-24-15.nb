@@ -1,0 +1,551 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     26844,        542]
+NotebookOptionsPosition[     26411,        522]
+NotebookOutlinePosition[     26757,        537]
+CellTagsIndexPosition[     26714,        534]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Irregular Tumor GUI Code :", "Title",
+ CellChangeTimes->{{3.646765230787794*^9, 3.64676524176609*^9}, {
+  3.646775729417342*^9, 3.646775736145816*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+  "SetDirectory", "[", 
+   "\"\<C:\\\\Users\\\\Justin\\\\Desktop\\\\Internship Training \
+2015\\\\Irregular (1)\\\\5357\>\"", "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"fn", "=", 
+   RowBox[{"FileNames", "[", "\"\<*\>\"", "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"slicesIrregularRaw", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"ImageAdjust", "[", 
+      RowBox[{"Import", "[", "#", "]"}], "]"}], "&"}], "/@", "fn"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.646766748769664*^9, 3.646766754026161*^9}, {
+   3.646766972724511*^9, 3.646766973579075*^9}, 3.64677585324164*^9, {
+   3.6467919613651752`*^9, 3.6467919636160564`*^9}, {3.6467920799203863`*^9, 
+   3.646792081326687*^9}, {3.646792193945324*^9, 3.6467922026811314`*^9}, {
+   3.6467923002259765`*^9, 3.6467923082750864`*^9}, {3.6467923484417567`*^9, 
+   3.6467923500356083`*^9}, {3.646792436086194*^9, 3.646792455249384*^9}, {
+   3.6467925050128355`*^9, 3.6467925069348087`*^9}, {3.646792552738331*^9, 
+   3.6467925668697443`*^9}, {3.646792654466175*^9, 3.646792721158699*^9}, {
+   3.6467928480981617`*^9, 3.646792848848192*^9}, {3.6467933666211567`*^9, 
+   3.6467934099387517`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Manipulate", " ", "[", 
+   RowBox[{
+    RowBox[{"DynamicModule", "[", "\n", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "pen", ",", " ", "erasor", ",", " ", "segmentation", ",", " ", "mask", 
+        ",", " ", "color", ",", " ", 
+        RowBox[{"img", " ", "=", " ", 
+         RowBox[{"ImageAdjust", "[", 
+          RowBox[{"slicesIrregularRaw", "[", 
+           RowBox[{"[", "i", "]"}], "]"}], "]"}]}]}], "}"}], ",", "\n", " ", 
+      RowBox[{
+       RowBox[{"pen", " ", "=", " ", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"SetAlphaChannel", "[", 
+           RowBox[{"#", ",", " ", "#"}], "]"}], " ", "&"}], " ", "/@", " ", 
+         RowBox[{"Image", "[", 
+          RowBox[{
+           RowBox[{"DiskMatrix", "[", "1.6", "]"}], ",", " ", "\"\<Bit\>\""}],
+           "]"}]}]}], ";", "\n", " ", 
+       RowBox[{"erasor", " ", "=", " ", 
+        RowBox[{"ColorNegate", "[", "pen", "]"}]}], ";", "\n", " ", 
+       RowBox[{"segmentation", " ", "=", " ", 
+        RowBox[{"ConstantImage", "[", 
+         RowBox[{"1", ",", " ", 
+          RowBox[{"ImageDimensions", "[", "img", "]"}]}], "]"}]}], ";", "\n", 
+       " ", 
+       RowBox[{"mask", " ", "=", " ", 
+        RowBox[{"Table", "[", 
+         RowBox[{
+          RowBox[{"ConstantImage", "[", 
+           RowBox[{"0", ",", " ", 
+            RowBox[{"ImageDimensions", "[", "img", "]"}], ",", " ", 
+            "\"\<Bit\>\""}], "]"}], ",", " ", 
+          RowBox[{"{", "3", "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+       "\n", " ", 
+       RowBox[{"Deploy", "@", 
+        RowBox[{"Panel", "[", 
+         RowBox[{"Grid", "[", 
+          RowBox[{"{", "\n", "     ", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"SetterBar", "[", "\n", "       ", 
+               RowBox[{
+                RowBox[{"Dynamic", "[", "color", "]"}], ",", " ", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"1", " ", "->", " ", "\"\<Background\>\""}], ",", 
+                  " ", 
+                  RowBox[{"2", " ", "->", " ", "\"\<Foreground\>\""}]}], 
+                 "}"}]}], "]"}], ",", "\[IndentingNewLine]", 
+              RowBox[{"Button", "[", 
+               RowBox[{"\"\<Clear\>\"", ",", "\n", "       ", 
+                RowBox[{
+                 RowBox[{"mask", " ", "=", " ", "\n", "        ", 
+                  RowBox[{"Table", "[", 
+                   RowBox[{
+                    RowBox[{"ConstantImage", "[", 
+                    RowBox[{"0", ",", " ", 
+                    RowBox[{"ImageDimensions", "[", "img", "]"}], ",", " ", 
+                    "\"\<Bit\>\""}], "]"}], ",", " ", 
+                    RowBox[{"{", "3", "}"}]}], "]"}]}], ";", "\n", "       ", 
+                 RowBox[{"segmentation", " ", "=", " ", "\n", "        ", 
+                  RowBox[{"ConstantImage", "[", 
+                   RowBox[{"255", ",", " ", 
+                    RowBox[{"ImageDimensions", "[", "img", "]"}], ",", " ", 
+                    "\"\<Byte\>\""}], "]"}]}]}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Button", "[", 
+               RowBox[{"\"\<Grow Cut\>\"", ",", "\n", "       ", 
+                RowBox[{"If", "[", 
+                 RowBox[{
+                  RowBox[{"Not", "[", 
+                   RowBox[{"And", " ", "@@", " ", 
+                    RowBox[{"Map", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"ImageMeasurements", "[", 
+                    RowBox[{"#", ",", " ", "\"\<Max\>\""}], "]"}], " ", "==", 
+                    " ", "0"}], ")"}], " ", "&"}], ",", " ", "mask"}], 
+                    "]"}]}], "]"}], ",", "\n", "      ", 
+                  RowBox[{
+                   RowBox[{"gcc", "=", "\n", "          ", 
+                    RowBox[{
+                    RowBox[{"GrowCutComponents", "[", 
+                    RowBox[{"img", ",", " ", "mask", ",", " ", 
+                    RowBox[{"MaxIterations", " ", "->", " ", "256"}]}], "]"}],
+                     " ", "-", " ", "1"}]}], ";", "\[IndentingNewLine]", 
+                   "   ", 
+                   RowBox[{
+                   "segmentation", " ", "=", "\[IndentingNewLine]", "  ", 
+                    RowBox[{"ImageCompose", "[", 
+                    RowBox[{
+                    RowBox[{"Image", "[", "\n", "          ", 
+                    RowBox[{
+                    RowBox[{"GrowCutComponents", "[", 
+                    RowBox[{"img", ",", " ", "mask", ",", " ", 
+                    RowBox[{"MaxIterations", " ", "->", " ", "256"}]}], "]"}],
+                     " ", "-", " ", "0.5"}], "]"}], ",", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"Dynamic", "[", "\[IndentingNewLine]", 
+                    RowBox[{"Graphics", "[", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"{", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"Style", "[", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"Text", "[", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"\"\<Area\>\"", "->", 
+                    RowBox[{
+                    RowBox[{"ComponentMeasurements", "[", 
+                    RowBox[{
+                    RowBox[{"Binarize", "[", 
+                    RowBox[{"Image", "[", 
+                    RowBox[{"(", "gcc", ")"}], "]"}], "]"}], ",", 
+                    "\"\<Area\>\""}], "]"}], "[", 
+                    RowBox[{"[", 
+                    RowBox[{"1", ",", "2"}], "]"}], "]"}]}], ",", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"areaTextCoord", "=", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"Dimensions", "[", "gcc", "]"}], "[", 
+                    RowBox[{"[", "1", "]"}], "]"}], "/", "4.3"}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"Dimensions", "[", "gcc", "]"}], "[", 
+                    RowBox[{"[", "2", "]"}], "]"}], "/", "13"}]}], "}"}]}]}], 
+                    "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
+                    "Bold", ",", 
+                    RowBox[{"FontSize", "\[Rule]", "15"}], ",", 
+                    RowBox[{"FontColor", "\[Rule]", "Black"}], ",", 
+                    RowBox[{"FontFamily", "\[Rule]", "\"\<Calisto MT\>\""}]}],
+                     "]"}], ",", "\[IndentingNewLine]", "Red", ",", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"Arrowheads", "[", "0.05", "]"}], ",", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"Arrow", "[", "\[IndentingNewLine]", 
+                    RowBox[{"{", "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"areaTextCoord", "[", 
+                    RowBox[{"[", "1", "]"}], "]"}], ",", 
+                    RowBox[{
+                    RowBox[{"areaTextCoord", "[", 
+                    RowBox[{"[", "2", "]"}], "]"}], "+", "10"}]}], "}"}], ",",
+                     "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"ComponentMeasurements", "[", 
+                    RowBox[{"gcc", ",", "\"\<Centroid\>\""}], "]"}], "[", 
+                    RowBox[{"[", 
+                    RowBox[{"1", ",", "2"}], "]"}], "]"}]}], 
+                    "\[IndentingNewLine]", "}"}], "\[IndentingNewLine]", 
+                    "]"}]}], "\[IndentingNewLine]", "}"}], ",", 
+                    "\[IndentingNewLine]", 
+                    RowBox[{"PlotRange", "\[Rule]", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", 
+                    RowBox[{
+                    RowBox[{"Dimensions", "[", "gcc", "]"}], "[", 
+                    RowBox[{"[", "2", "]"}], "]"}]}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", 
+                    RowBox[{
+                    RowBox[{"Dimensions", "[", "gcc", "]"}], "[", 
+                    RowBox[{"[", "2", "]"}], "]"}]}], "}"}]}], "}"}]}], ",", 
+                    RowBox[{"PlotRangeClipping", "\[Rule]", "True"}], ",", 
+                    RowBox[{"Frame", "\[Rule]", "True"}]}], 
+                    "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", 
+                    "]"}]}], "\[IndentingNewLine]", "]"}]}], ";", 
+                   "\[IndentingNewLine]", "        ", 
+                   RowBox[{"mask", " ", "=", " ", "\n", "         ", 
+                    RowBox[{"Table", "[", 
+                    RowBox[{
+                    RowBox[{"ConstantImage", "[", 
+                    RowBox[{"0", ",", " ", 
+                    RowBox[{"ImageDimensions", "[", "img", "]"}], ",", " ", 
+                    "\"\<Bit\>\""}], "]"}], ",", " ", 
+                    RowBox[{"{", "3", "}"}]}], "]"}]}]}]}], "]"}]}], "]"}]}], 
+             "\[IndentingNewLine]", "}"}], ",", "\n", "     ", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"EventHandler", "[", "\n", "       ", 
+               RowBox[{
+                RowBox[{"Dynamic", "@", 
+                 RowBox[{"Deploy", "@", 
+                  RowBox[{"Image", "[", 
+                   RowBox[{
+                    RowBox[{"ImageCompose", "[", "\n", "           ", 
+                    RowBox[{
+                    RowBox[{"SetAlphaChannel", "[", 
+                    RowBox[{"img", ",", " ", "segmentation"}], "]"}], ",", 
+                    " ", "\n", "           ", 
+                    RowBox[{"SetAlphaChannel", "[", 
+                    RowBox[{
+                    RowBox[{"ColorCombine", "[", "mask", "]"}], ",", "\n", 
+                    "            ", 
+                    RowBox[{"ImageAdd", " ", "@@", " ", "mask"}]}], "]"}]}], 
+                    "]"}], ",", " ", 
+                    RowBox[{"ImageSize", " ", "->", " ", 
+                    RowBox[{"ImageDimensions", "[", "img", "]"}]}]}], 
+                   "]"}]}]}], ",", "\n", "       ", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<MouseDragged\>\"", " ", ":>", " ", 
+                  RowBox[{"If", "[", "\n", "          ", 
+                   RowBox[{
+                    RowBox[{"CurrentValue", "[", "\"\<ShiftKey\>\"", "]"}], 
+                    ",", "\n", "          ", 
+                    RowBox[{
+                    RowBox[{"mask", "[", 
+                    RowBox[{"[", "color", "]"}], "]"}], " ", "=", " ", 
+                    RowBox[{"ImageCompose", "[", 
+                    RowBox[{
+                    RowBox[{"mask", "[", 
+                    RowBox[{"[", "color", "]"}], "]"}], ",", " ", "erasor", 
+                    ",", "\n", "            ", 
+                    RowBox[{
+                    RowBox[{
+                    "MousePosition", "[", "\"\<EventHandlerAbsolute\>\"", 
+                    "]"}], "/", "\n", "             ", 
+                    RowBox[{"CurrentValue", "[", "Magnification", "]"}]}]}], 
+                    "]"}]}], ",", "\n", "          ", 
+                    RowBox[{
+                    RowBox[{"mask", "[", 
+                    RowBox[{"[", "color", "]"}], "]"}], " ", "=", " ", "\n", 
+                    "           ", 
+                    RowBox[{"ImageCompose", "[", 
+                    RowBox[{
+                    RowBox[{"mask", "[", 
+                    RowBox[{"[", "color", "]"}], "]"}], ",", " ", "pen", ",", 
+                    " ", 
+                    RowBox[{
+                    RowBox[{
+                    "MousePosition", "[", "\n", "              ", 
+                    "\"\<EventHandlerAbsolute\>\"", "]"}], "/", 
+                    RowBox[{"CurrentValue", "[", "Magnification", "]"}]}]}], 
+                    "]"}]}]}], "\n", "          ", "]"}]}], "}"}]}], "\n", 
+               "       ", "]"}], ",", "\n", "      ", "SpanFromLeft"}], 
+             "}"}]}], "}"}], "\n", "    ", "]"}], "\[IndentingNewLine]", 
+         "]"}]}]}]}], "\n", "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "1", ",", 
+      RowBox[{"Length", "[", "slicesIrregularRaw", "]"}], ",", "1", ",", 
+      RowBox[{"Appearance", "\[Rule]", "\"\<Open\>\""}]}], "}"}]}], "]"}], 
+  " "}]], "Input",
+ CellChangeTimes->{
+  3.6467661688932724`*^9, {3.64677493861376*^9, 3.646774941964992*^9}, 
+   3.646775283748145*^9, {3.646775330261058*^9, 3.6467753428684387`*^9}, {
+   3.646775396361986*^9, 3.646775449284159*^9}, {3.646775945491952*^9, 
+   3.646775953276123*^9}, 3.646776327788027*^9, {3.646776444832821*^9, 
+   3.6467764622013597`*^9}, {3.6467765454346776`*^9, 3.646776555445335*^9}, {
+   3.6467769832256403`*^9, 3.646776995116544*^9}, {3.646777066492982*^9, 
+   3.6467770670333433`*^9}, {3.646778405166136*^9, 3.646778422458625*^9}, {
+   3.646778496167616*^9, 3.6467785036846085`*^9}, {3.646778803027556*^9, 
+   3.646778809804061*^9}, {3.646778868102811*^9, 3.646778879137145*^9}, {
+   3.6467789162868347`*^9, 3.646778927798481*^9}, {3.6467791619240847`*^9, 
+   3.6467791933169527`*^9}, {3.6467792338719025`*^9, 
+   3.6467792358542233`*^9}, {3.6467793153020267`*^9, 
+   3.6467793571828575`*^9}, {3.6467794048455343`*^9, 
+   3.6467794302904453`*^9}, {3.646779507625847*^9, 3.646779547377267*^9}, {
+   3.6467796630001116`*^9, 3.6467796667756166`*^9}, {3.646779730815179*^9, 
+   3.6467797409839363`*^9}, {3.646779968918425*^9, 3.6467799767086024`*^9}, {
+   3.646780321651862*^9, 3.646780327217556*^9}, {3.646780758023877*^9, 
+   3.6467807607356834`*^9}, {3.646780991700182*^9, 3.6467809989159813`*^9}, 
+   3.646781110331025*^9, {3.646781181216137*^9, 3.6467811894936385`*^9}, 
+   3.6467816241475153`*^9, {3.6467816574196324`*^9, 3.6467816582611923`*^9}, {
+   3.6467817611245527`*^9, 3.6467817801572056`*^9}, {3.6467818712367353`*^9, 
+   3.6467818720142584`*^9}, {3.646782644988983*^9, 3.64678264848431*^9}, {
+   3.6467827217650094`*^9, 3.646782723962474*^9}, {3.646782858257724*^9, 
+   3.646782906422736*^9}, {3.6467829388472905`*^9, 3.64678294048638*^9}, {
+   3.646783017081281*^9, 3.646783018919503*^9}, {3.64678305016727*^9, 
+   3.6467830657656374`*^9}, {3.646783112238529*^9, 3.6467831196314383`*^9}, {
+   3.64678317095855*^9, 3.646783172805781*^9}, {3.6467848816021986`*^9, 
+   3.646784940330229*^9}, {3.646785010046564*^9, 3.646785205260311*^9}, {
+   3.646785262462327*^9, 3.6467852665300264`*^9}, {3.646785317725051*^9, 
+   3.6467853756765704`*^9}, {3.6467854469949703`*^9, 
+   3.6467854816349883`*^9}, {3.646785597082721*^9, 3.646785622417555*^9}, {
+   3.6467856670652323`*^9, 3.646785695928415*^9}, {3.646785746687146*^9, 
+   3.646785747177476*^9}, 3.646785880847316*^9, 3.6467877678648653`*^9, {
+   3.6467903281254587`*^9, 3.646790427536765*^9}, {3.646790489452208*^9, 
+   3.6467904895772157`*^9}, {3.6467905633235216`*^9, 3.646790607900055*^9}, {
+   3.646790680923168*^9, 3.646790722259904*^9}, {3.646790763561536*^9, 
+   3.646790772446398*^9}, {3.646790804691308*^9, 3.6467908167446737`*^9}, {
+   3.646790936069956*^9, 3.6467909556215496`*^9}, 3.6467910137890005`*^9, {
+   3.646791059106101*^9, 3.6467910668445044`*^9}, {3.646791136976987*^9, 
+   3.6467911932558756`*^9}, {3.6467912346574697`*^9, 3.646791265382147*^9}, {
+   3.646791309938284*^9, 3.6467913315720415`*^9}, {3.6467913655562367`*^9, 
+   3.6467913702307897`*^9}, {3.646791409386678*^9, 3.6467914671974*^9}, 
+   3.646791499683189*^9, {3.6467915584784513`*^9, 3.6467915730780573`*^9}, {
+   3.6467916853814864`*^9, 3.646791700037306*^9}, {3.646791882588358*^9, 
+   3.6467918865736165`*^9}, {3.646791927091404*^9, 3.646791976011933*^9}, {
+   3.6467921241573524`*^9, 3.646792132566586*^9}, {3.6467921887566385`*^9, 
+   3.646792189678556*^9}, {3.646792362797002*^9, 3.64679236448497*^9}, {
+   3.6467934754340744`*^9, 3.6467935610514555`*^9}, {3.646793624448873*^9, 
+   3.6467936258997383`*^9}, {3.646793756445032*^9, 3.646793759822054*^9}, {
+   3.646793808782531*^9, 3.646793833353407*^9}, 3.646793873079584*^9, {
+   3.6467940518085055`*^9, 3.646794053605817*^9}, {3.6467943867441845`*^9, 
+   3.6467944248713913`*^9}, {3.646794466566169*^9, 3.646794467659984*^9}, {
+   3.6467945082385764`*^9, 3.6467945091768417`*^9}, {3.6467945544811897`*^9, 
+   3.646794554637443*^9}, {3.64679463740331*^9, 3.646794641810438*^9}, {
+   3.6467947877476482`*^9, 3.6467948841983633`*^9}, 3.646794997642188*^9, 
+   3.6467950427607193`*^9, 3.6467958024258313`*^9, {3.6467958828070936`*^9, 
+   3.6467959042297587`*^9}, 3.646796018843207*^9, {3.646796062291871*^9, 
+   3.646796089601103*^9}, {3.646796134853351*^9, 3.646796156438526*^9}, 
+   3.6467963887503414`*^9, 3.6467965096879582`*^9, {3.646796542211755*^9, 
+   3.6467965483849516`*^9}, {3.6467965791905656`*^9, 3.6467965830510983`*^9}, 
+   3.646796661373478*^9, {3.646796775589822*^9, 3.646796776683633*^9}, {
+   3.6467968115116825`*^9, 3.646796813746766*^9}, 3.646796875080909*^9, {
+   3.646796943229183*^9, 3.646797051904153*^9}, {3.6467971277771273`*^9, 
+   3.6467971284646616`*^9}, {3.64679720441185*^9, 3.6467972069907484`*^9}, {
+   3.6467972511560125`*^9, 3.6467972729163265`*^9}, {3.6467976842088437`*^9, 
+   3.646797752727418*^9}, 3.646797797078005*^9, {3.646797847880911*^9, 
+   3.6467978766518717`*^9}, 3.646797972250447*^9}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`i$$ = 195, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`i$$], 1, 196, 1}}, Typeset`size$$ = {
+    306., {167., 175.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`i$1408824$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`i$$ = 1}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`i$$, $CellContext`i$1408824$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      DynamicModule[{$CellContext`pen, $CellContext`erasor, \
+$CellContext`segmentation, $CellContext`mask, $CellContext`color, \
+$CellContext`img = ImageAdjust[
+           
+           Part[$CellContext`slicesIrregularRaw, $CellContext`i$$]]}, \
+$CellContext`pen = Map[SetAlphaChannel[#, #]& , 
+           Image[
+            DiskMatrix[1.6], "Bit"]]; $CellContext`erasor = 
+         ColorNegate[$CellContext`pen]; $CellContext`segmentation = 
+         ConstantImage[1, 
+           ImageDimensions[$CellContext`img]]; $CellContext`mask = Table[
+           ConstantImage[0, 
+            ImageDimensions[$CellContext`img], "Bit"], {3}]; Deploy[
+          Panel[
+           Grid[{{
+              SetterBar[
+               Dynamic[$CellContext`color], {
+               1 -> "Background", 2 -> "Foreground"}], 
+              Button["Clear", $CellContext`mask = Table[
+                  ConstantImage[0, 
+                   ImageDimensions[$CellContext`img], "Bit"], {
+                  3}]; $CellContext`segmentation = ConstantImage[255, 
+                  ImageDimensions[$CellContext`img], "Byte"]], 
+              Button["Grow Cut", 
+               If[
+                Not[
+                 Apply[And, 
+                  Map[
+                  ImageMeasurements[#, "Max"] == 
+                   0& , $CellContext`mask]]], $CellContext`gcc = 
+                 GrowCutComponents[$CellContext`img, $CellContext`mask, 
+                    MaxIterations -> 256] - 1; $CellContext`segmentation = 
+                 ImageCompose[
+                   Image[
+                   GrowCutComponents[$CellContext`img, $CellContext`mask, 
+                    MaxIterations -> 256] - 0.5], 
+                   Dynamic[
+                    Graphics[{
+                    Style[
+                    Text["Area" -> Part[
+                    ComponentMeasurements[
+                    Binarize[
+                    Image[$CellContext`gcc]], "Area"], 1, 
+                    2], $CellContext`areaTextCoord = {Part[
+                    Dimensions[$CellContext`gcc], 1]/4.3, Part[
+                    Dimensions[$CellContext`gcc], 2]/13}], Bold, FontSize -> 
+                    15, FontColor -> Black, FontFamily -> "Calisto MT"], Red, 
+                    Arrowheads[0.05], 
+                    Arrow[{{
+                    Part[$CellContext`areaTextCoord, 1], 
+                    Part[$CellContext`areaTextCoord, 2] + 10}, 
+                    Part[
+                    ComponentMeasurements[$CellContext`gcc, "Centroid"], 1, 
+                    2]}]}, PlotRange -> {{0, 
+                    Part[
+                    Dimensions[$CellContext`gcc], 2]}, {0, 
+                    Part[
+                    Dimensions[$CellContext`gcc], 2]}}, PlotRangeClipping -> 
+                    True, Frame -> True]]]; $CellContext`mask = Table[
+                   ConstantImage[0, 
+                    ImageDimensions[$CellContext`img], "Bit"], {3}]]]}, {
+              EventHandler[
+               Dynamic[
+                Deploy[
+                 Image[
+                  ImageCompose[
+                   
+                   SetAlphaChannel[$CellContext`img, \
+$CellContext`segmentation], 
+                   SetAlphaChannel[
+                    ColorCombine[$CellContext`mask], 
+                    Apply[ImageAdd, $CellContext`mask]]], ImageSize -> 
+                  ImageDimensions[$CellContext`img]]]], {"MouseDragged" :> If[
+                  CurrentValue["ShiftKey"], 
+                  Part[$CellContext`mask, $CellContext`color] = ImageCompose[
+                    
+                    Part[$CellContext`mask, $CellContext`color], \
+$CellContext`erasor, MousePosition["EventHandlerAbsolute"]/CurrentValue[
+                    Magnification]], 
+                  Part[$CellContext`mask, $CellContext`color] = ImageCompose[
+                    
+                    Part[$CellContext`mask, $CellContext`color], \
+$CellContext`pen, MousePosition["EventHandlerAbsolute"]/CurrentValue[
+                    Magnification]]]}], SpanFromLeft}}]]]], 
+      "Specifications" :> {{$CellContext`i$$, 1, 196, 1, Appearance -> 
+         "Open"}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{357., {227., 234.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.6467912667572203`*^9, {3.646791310688321*^9, 3.6467913331836*^9}, 
+   3.6467913709191103`*^9, 3.6467914154046555`*^9, 3.6467914680411973`*^9, 
+   3.6467915016373863`*^9, 3.646791573328065*^9, {3.6467916909623423`*^9, 
+   3.646791700756092*^9}, {3.646791883510972*^9, 3.646791887762183*^9}, 
+   3.646791927607046*^9, {3.6467920899233274`*^9, 3.6467921330978594`*^9}, 
+   3.6467924418388147`*^9, 3.6467933971278267`*^9, 3.646793460458954*^9, {
+   3.6467934962967305`*^9, 3.6467935183443546`*^9}, 3.6467935618327436`*^9, 
+   3.646793627025298*^9, 3.6467937607283344`*^9, {3.6467938098784103`*^9, 
+   3.6467938343065786`*^9}, 3.646793883901613*^9, 3.6467939777197104`*^9, 
+   3.6467943809615674`*^9, 3.646794468300629*^9, 3.646794509911256*^9, 
+   3.646794555324983*^9, 3.6467946425919867`*^9, {3.6467947912641277`*^9, 
+   3.646794884854647*^9}, 3.6467949989391236`*^9, 3.646795043713892*^9, 
+   3.6467958043950243`*^9, {3.6467958839749813`*^9, 3.646795904776661*^9}, 
+   3.6467960203125653`*^9, {3.646796067793346*^9, 3.646796090367407*^9}, 
+   3.6467963901886215`*^9, 3.646796510969273*^9, 3.646796549603752*^9, 
+   3.6467965839886456`*^9, 3.64679667915884*^9, 3.6467967779493227`*^9, 
+   3.646796876643486*^9, {3.646796995796813*^9, 3.6467970528416996`*^9}, {
+   3.646797129777599*^9, 3.64679715689445*^9}, 3.646797208913275*^9, 
+   3.6467972756487846`*^9, {3.646797685740693*^9, 3.646797753461814*^9}, 
+   3.6467977980784483`*^9, 3.646797899830759*^9, 3.646797963192448*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1280, 941},
+WindowMargins->{{Automatic, -1288}, {416, Automatic}},
+FrontEndVersion->"10.2 for Microsoft Windows (64-bit) (July 7, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 157, 2, 101, "Title"],
+Cell[740, 26, 1181, 25, 72, "Input"],
+Cell[CellGroupData[{
+Cell[1946, 55, 17393, 325, 1332, "Input"],
+Cell[19342, 382, 7041, 136, 478, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

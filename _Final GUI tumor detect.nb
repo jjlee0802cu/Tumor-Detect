@@ -1,0 +1,1003 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     45876,        994]
+NotebookOptionsPosition[     45316,        971]
+NotebookOutlinePosition[     45660,        986]
+CellTagsIndexPosition[     45617,        983]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"sdHyperLinkToMyHyperlink", "=", 
+  RowBox[{"Hyperlink", "[", 
+   RowBox[{
+    RowBox[{"Style", "[", 
+     RowBox[{
+     "\"\<Clink the Link to View a Demonstration of the program\>\"", ",", 
+      RowBox[{"{", "Bold", "}"}], ",", 
+      RowBox[{"FontSize", "\[Rule]", "16"}]}], "]"}], ",", 
+    "\"\<https://www.youtube.com/watch?v=KZ2URsd9E3s\>\""}], "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"sfRunTheNotebook", "=", 
+   RowBox[{"evalStart", ":=", "\[IndentingNewLine]", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", "}"}], ",", 
+      RowBox[{
+       RowBox[{"FrontEndExecute", "[", 
+        RowBox[{"FrontEndToken", "[", 
+         RowBox[{
+          RowBox[{"InputNotebook", "[", "]"}], ",", 
+          "\"\<EvaluateInitialization\>\""}], "]"}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"FrontEndExecute", "[", 
+        RowBox[{"FrontEndToken", "[", 
+         RowBox[{
+          RowBox[{"InputNotebook", "[", "]"}], ",", "\"\<SelectAll\>\""}], 
+         "]"}], "]"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"FrontEndExecute", "[", 
+        RowBox[{"FrontEndToken", "[", 
+         RowBox[{
+          RowBox[{"InputNotebook", "[", "]"}], ",", "\"\<EvaluateCells\>\""}],
+          "]"}], "]"}], ";"}]}], "]"}]}]}], ";"}], "\n", 
+ RowBox[{"Button", "[", 
+  RowBox[{"\"\<Start Program\>\"", ",", "evalStart", ",", 
+   RowBox[{"ImageSize", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"800", ",", "50"}], "}"}]}], ",", 
+   RowBox[{"Background", "\[Rule]", 
+    RowBox[{"Lighter", "[", 
+     RowBox[{"Blue", ",", " ", "0.7"}], "]"}]}], ",", 
+   RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.647053636345972*^9, 3.6470536813810635`*^9}, {
+   3.647097590271985*^9, 3.647097607000573*^9}, {3.6470976651742373`*^9, 
+   3.647097783697279*^9}, {3.647097819713256*^9, 3.647097853415126*^9}, {
+   3.6471884705850525`*^9, 3.6471884725665183`*^9}, 3.650334102851739*^9, 
+   3.650335476333016*^9, 3.6503367067494106`*^9, 3.650337822431967*^9, 
+   3.6505679345659947`*^9, {3.6505687146204815`*^9, 3.65056875397054*^9}},
+ Background->GrayLevel[0.85]],
+
+Cell[BoxData[
+ TagBox[
+  ButtonBox[
+   PaneSelectorBox[{False->
+    StyleBox["\<\"Clink the Link to View a Demonstration of the program\"\>",
+     StripOnInput->False,
+     FontSize->16,
+     FontWeight->Bold], True->
+    StyleBox[
+     StyleBox["\<\"Clink the Link to View a Demonstration of the program\"\>",
+      StripOnInput->False,
+      FontSize->16,
+      FontWeight->Bold], "HyperlinkActive"]}, Dynamic[
+     CurrentValue["MouseOver"]],
+    BaseStyle->{"Hyperlink"},
+    FrameMargins->0,
+    ImageSize->Automatic],
+   BaseStyle->"Hyperlink",
+   ButtonData->{
+     URL["https://www.youtube.com/watch?v=KZ2URsd9E3s"], None},
+   ButtonNote->"https://www.youtube.com/watch?v=KZ2URsd9E3s"],
+  Annotation[#, "https://www.youtube.com/watch?v=KZ2URsd9E3s", 
+   "Hyperlink"]& ]], "Output",
+ CellChangeTimes->{
+  3.647109625973076*^9, 3.6471324867603345`*^9, {3.6471336418472433`*^9, 
+   3.6471336522682905`*^9}, 3.6471844992107944`*^9, {3.647188476032611*^9, 
+   3.6471884779251966`*^9}, {3.6471948634696255`*^9, 3.6471948643319798`*^9}, 
+   3.6472119930766416`*^9, 3.647212087730423*^9, {3.6472121812464623`*^9, 
+   3.647212182883328*^9}, 3.649718072010851*^9, 3.6497181888042545`*^9, {
+   3.649722022577363*^9, 3.6497220234349327`*^9}, 3.6497907889021654`*^9, 
+   3.649796525795698*^9, {3.649796624833682*^9, 3.6497966376422176`*^9}, 
+   3.6503335844897346`*^9, {3.6503341064000936`*^9, 3.650334113776985*^9}, 
+   3.650334207813365*^9, {3.650334253440634*^9, 3.650334281643342*^9}, {
+   3.6503344139331017`*^9, 3.650334429287287*^9}, 3.650334514747982*^9, 
+   3.6503345753021526`*^9, 3.6503353400564785`*^9, {3.6503353927554383`*^9, 
+   3.6503354137763877`*^9}, 3.6503354767623014`*^9, 3.65033552340725*^9, 
+   3.6503359033913193`*^9, 3.650336135215108*^9, 3.6503367072107162`*^9, 
+   3.6503368682738733`*^9, 3.6503370255972385`*^9, {3.6503378241901283`*^9, 
+   3.6503378332331285`*^9}, 3.650567966565183*^9, 3.6505681546266794`*^9, 
+   3.6505687600955925`*^9, 3.650569565918171*^9, 3.650570095696438*^9, 
+   3.6505707205911193`*^9, 3.6505707529545493`*^9, 3.6512538007681246`*^9}],
+
+Cell[BoxData[
+ ButtonBox["\<\"Start Program\"\>",
+  Alignment->Center,
+  Appearance->Automatic,
+  Background->RGBColor[0.7, 0.7, 1.],
+  ButtonFunction:>$CellContext`evalStart,
+  Evaluator->Automatic,
+  ImageSize->{800, 50},
+  Method->"Preemptive"]], "Output",
+ CellChangeTimes->{
+  3.647109625973076*^9, 3.6471324867603345`*^9, {3.6471336418472433`*^9, 
+   3.6471336522682905`*^9}, 3.6471844992107944`*^9, {3.647188476032611*^9, 
+   3.6471884779251966`*^9}, {3.6471948634696255`*^9, 3.6471948643319798`*^9}, 
+   3.6472119930766416`*^9, 3.647212087730423*^9, {3.6472121812464623`*^9, 
+   3.647212182883328*^9}, 3.649718072010851*^9, 3.6497181888042545`*^9, {
+   3.649722022577363*^9, 3.6497220234349327`*^9}, 3.6497907889021654`*^9, 
+   3.649796525795698*^9, {3.649796624833682*^9, 3.6497966376422176`*^9}, 
+   3.6503335844897346`*^9, {3.6503341064000936`*^9, 3.650334113776985*^9}, 
+   3.650334207813365*^9, {3.650334253440634*^9, 3.650334281643342*^9}, {
+   3.6503344139331017`*^9, 3.650334429287287*^9}, 3.650334514747982*^9, 
+   3.6503345753021526`*^9, 3.6503353400564785`*^9, {3.6503353927554383`*^9, 
+   3.6503354137763877`*^9}, 3.6503354767623014`*^9, 3.65033552340725*^9, 
+   3.6503359033913193`*^9, 3.650336135215108*^9, 3.6503367072107162`*^9, 
+   3.6503368682738733`*^9, 3.6503370255972385`*^9, {3.6503378241901283`*^9, 
+   3.6503378332331285`*^9}, 3.650567966565183*^9, 3.6505681546266794`*^9, 
+   3.6505687600955925`*^9, 3.650569565918171*^9, 3.650570095696438*^9, 
+   3.6505707205911193`*^9, 3.6505707529545493`*^9, 3.6512538007841406`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"sdDirectoryInput", "=", 
+   RowBox[{"InputString", "[", 
+    RowBox[{
+    "\"\<What is the directory where the desired images are stored? He re is \
+an example:\>\"", ",", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"NotebookDirectory", "[", "]"}], ",", "\"\<Data\>\"", ",", 
+        "\"\<Irregular (1)\>\"", ",", "\"\<5357\>\""}], "}"}], "]"}]}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sdFileNames", "=", 
+   RowBox[{"FileNames", "[", 
+    RowBox[{"\"\<*\>\"", ",", "sdDirectoryInput"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sdSlicesIrregularRaw", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"ImageAdjust", "[", 
+      RowBox[{"Import", "[", "#", "]"}], "]"}], "&"}], "/@", 
+    "sdFileNames"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"sdTempVar", " ", "=", " ", 
+   RowBox[{"{", "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"sdTempVar2", " ", "=", " ", 
+   RowBox[{"{", "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"sdNumberOfSlicesSelected", " ", "=", " ", "0"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"sdSlicesSpacing", " ", "=", " ", "0"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"sdTotalVolume", " ", "=", " ", "0"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"sdAreaOfEachSavedSlice", " ", "=", " ", "0"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"sdVolumeOfEachSavedSlice", " ", "=", " ", "0"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Clear", "@", "sdNameOfDoctor"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"sdNameOfDoctor", " ", "=", " ", 
+    RowBox[{"InputString", "[", "\"\<What is your name?\>\"", "]"}]}], ";"}], 
+  "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"Manipulate", " ", "[", 
+   RowBox[{
+    RowBox[{"DynamicModule", "[", "\n", "  ", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "pen", ",", " ", "erasor", ",", " ", "segmentation", ",", " ", "mask", 
+        ",", " ", "color", ",", " ", 
+        RowBox[{"img", " ", "=", " ", 
+         RowBox[{"ImageAdjust", "[", 
+          RowBox[{"sdSlicesIrregularRaw", "[", 
+           RowBox[{"[", "i", "]"}], "]"}], "]"}]}]}], "}"}], ",", "\n", "   ", 
+      RowBox[{
+       RowBox[{"pen", " ", "=", " ", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"SetAlphaChannel", "[", 
+           RowBox[{"#", ",", " ", "#"}], "]"}], " ", "&"}], " ", "/@", " ", 
+         RowBox[{"Image", "[", 
+          RowBox[{
+           RowBox[{"DiskMatrix", "[", "1.6", "]"}], ",", " ", "\"\<Bit\>\""}],
+           "]"}]}]}], ";", "\n", "   ", 
+       RowBox[{"erasor", " ", "=", " ", 
+        RowBox[{"ColorNegate", "[", "pen", "]"}]}], ";", "\n", "   ", 
+       RowBox[{"segmentation", " ", "=", " ", 
+        RowBox[{"ConstantImage", "[", 
+         RowBox[{"1", ",", " ", 
+          RowBox[{"ImageDimensions", "[", "img", "]"}]}], "]"}]}], ";", "\n", 
+       "   ", 
+       RowBox[{"mask", " ", "=", " ", 
+        RowBox[{"Table", "[", 
+         RowBox[{
+          RowBox[{"ConstantImage", "[", 
+           RowBox[{"0", ",", " ", 
+            RowBox[{"ImageDimensions", "[", "img", "]"}], ",", " ", 
+            "\"\<Bit\>\""}], "]"}], ",", " ", 
+          RowBox[{"{", "3", "}"}]}], "]"}]}], ";", "\n", "  ", 
+       RowBox[{"Deploy", "@", 
+        RowBox[{"Panel", "[", 
+         RowBox[{"Column", "[", 
+          RowBox[{
+           RowBox[{"{", "\n", "           ", 
+            RowBox[{
+             RowBox[{"Row", "@", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"SetterBar", "[", "\n", "               ", 
+                 RowBox[{
+                  RowBox[{"Dynamic", "[", "color", "]"}], ",", " ", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"1", " ", "->", " ", "\"\<Background\>\""}], ",", 
+                    " ", 
+                    RowBox[{"2", " ", "->", " ", "\"\<Foreground\>\""}]}], 
+                   "}"}]}], "]"}], ",", "\n", "       ", 
+                RowBox[{"Button", "[", 
+                 RowBox[{
+                 "\"\<Clear Background / Foreground\>\"", ",", "\n", 
+                  "               ", 
+                  RowBox[{
+                   RowBox[{"mask", " ", "=", " ", 
+                    RowBox[{"Table", "[", 
+                    RowBox[{
+                    RowBox[{"ConstantImage", "[", 
+                    RowBox[{"0", ",", " ", 
+                    RowBox[{"ImageDimensions", "[", "img", "]"}], ",", " ", 
+                    "\"\<Bit\>\""}], "]"}], ",", " ", 
+                    RowBox[{"{", "3", "}"}]}], "]"}]}], ";", "\n", 
+                   "               ", 
+                   RowBox[{"segmentation", " ", "=", " ", 
+                    RowBox[{"ConstantImage", "[", 
+                    RowBox[{"255", ",", " ", 
+                    RowBox[{"ImageDimensions", "[", "img", "]"}], ",", " ", 
+                    "\"\<Byte\>\""}], "]"}]}]}]}], "]"}], ",", "\n", 
+                "       ", 
+                RowBox[{"Button", "[", 
+                 RowBox[{"\"\<Grow Cut\>\"", ",", " ", 
+                  RowBox[{"If", "[", " ", 
+                   RowBox[{
+                    RowBox[{"!", " ", 
+                    RowBox[{"And", " ", "@@", " ", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"ImageMeasurements", "[", 
+                    RowBox[{"#1", ",", " ", "\"\<Max\>\""}], "]"}], " ", "==",
+                     " ", "0"}], " ", "&"}], " ", ")"}], " ", "/@", " ", 
+                    "mask"}]}]}], ",", " ", "\n", "                    ", 
+                    RowBox[{
+                    RowBox[{"sdGcc", " ", "=", " ", 
+                    RowBox[{
+                    RowBox[{"GrowCutComponents", "[", 
+                    RowBox[{"img", ",", " ", "mask", ",", " ", 
+                    RowBox[{"MaxIterations", " ", "->", " ", "256"}]}], "]"}],
+                     " ", "-", " ", "1"}]}], ";", " ", 
+                    RowBox[{"segmentation", " ", "=", " ", 
+                    RowBox[{"ImageCompose", "[", 
+                    RowBox[{
+                    RowBox[{"Image", "[", 
+                    RowBox[{
+                    RowBox[{"GrowCutComponents", "[", 
+                    RowBox[{
+                    "img", ",", " ", "mask", ",", " ", "\n", 
+                    "                               ", 
+                    RowBox[{"MaxIterations", " ", "->", " ", "256"}]}], "]"}],
+                     " ", "-", " ", "0.5"}], "]"}], ",", " ", 
+                    RowBox[{"Dynamic", "[", 
+                    RowBox[{"Graphics", "[", 
+                    RowBox[{
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"Text", "[", 
+                    RowBox[{"\"\< \>\"", " ", ",", " ", 
+                    RowBox[{"areaTextCoord", " ", "=", " ", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"Dimensions", "[", "sdGcc", "]"}], "[", 
+                    RowBox[{"[", "1", "]"}], "]"}], "/", "4.3"}], ",", " ", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"Dimensions", "[", "sdGcc", "]"}], "[", 
+                    RowBox[{"[", "2", "]"}], "]"}], "/", "12"}]}], "}"}]}]}], 
+                    "]"}], ",", " ", "Bold", ",", " ", 
+                    RowBox[{"FontSize", " ", "->", " ", "15"}], ",", " ", 
+                    RowBox[{"FontColor", " ", "->", " ", "White"}], ",", " ", 
+                    "\n", "                               ", 
+                    RowBox[{
+                    "FontFamily", " ", "->", " ", "\"\<Calisto MT\>\""}]}], 
+                    "]"}], ",", " ", 
+                    RowBox[{"PlotRange", " ", "->", " ", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", " ", 
+                    RowBox[{
+                    RowBox[{"Dimensions", "[", "sdGcc", "]"}], "[", 
+                    RowBox[{"[", "2", "]"}], "]"}]}], "}"}], ",", " ", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", " ", 
+                    RowBox[{
+                    RowBox[{"Dimensions", "[", "sdGcc", "]"}], "[", 
+                    RowBox[{"[", "2", "]"}], "]"}]}], "}"}]}], "}"}]}], ",", 
+                    " ", 
+                    RowBox[{"PlotRangeClipping", " ", "->", " ", "True"}], 
+                    ",", " ", "\n", "                             ", 
+                    RowBox[{"Frame", " ", "->", " ", "True"}]}], "]"}], 
+                    "]"}]}], "]"}]}], ";", " ", 
+                    RowBox[{"mask", " ", "=", " ", 
+                    RowBox[{"Table", "[", 
+                    RowBox[{
+                    RowBox[{"ConstantImage", "[", 
+                    RowBox[{"0", ",", " ", 
+                    RowBox[{"ImageDimensions", "[", "img", "]"}], ",", " ", 
+                    "\"\<Bit\>\""}], "]"}], ",", " ", 
+                    RowBox[{"{", "3", "}"}]}], "]"}]}]}]}], "]"}]}], "]"}]}], 
+               "}"}]}], ",", "\n", "     ", 
+             RowBox[{"Row", "@", " ", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"EventHandler", "[", 
+                 RowBox[{
+                  RowBox[{"Dynamic", "@", 
+                   RowBox[{"Deploy", "[", 
+                    RowBox[{"Image", "[", 
+                    RowBox[{
+                    RowBox[{
+                    "ImageCompose", "[", "\n", "                       ", 
+                    RowBox[{
+                    RowBox[{"SetAlphaChannel", "[", 
+                    RowBox[{"img", ",", " ", "segmentation"}], "]"}], ",", 
+                    " ", "\n", "                       ", 
+                    RowBox[{"SetAlphaChannel", "[", 
+                    RowBox[{
+                    RowBox[{"ColorCombine", "[", "mask", "]"}], ",", "\n", 
+                    "                         ", 
+                    RowBox[{"ImageAdd", " ", "@@", " ", "mask"}]}], "]"}]}], 
+                    "]"}], ",", " ", 
+                    RowBox[{"ImageSize", " ", "->", " ", 
+                    RowBox[{"ImageDimensions", "[", "img", "]"}]}]}], "]"}], 
+                    "]"}]}], ",", "\n", "               ", 
+                  RowBox[{"{", 
+                   RowBox[{"\"\<MouseDragged\>\"", " ", ":>", " ", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{"CurrentValue", "[", "\"\<ShiftKey\>\"", "]"}], 
+                    ",", "\n", "                     ", 
+                    RowBox[{
+                    RowBox[{"mask", "[", 
+                    RowBox[{"[", "color", "]"}], "]"}], " ", "=", " ", 
+                    RowBox[{"ImageCompose", "[", 
+                    RowBox[{
+                    RowBox[{"mask", "[", 
+                    RowBox[{"[", "color", "]"}], "]"}], ",", " ", "erasor", 
+                    ",", "\n", "                         ", 
+                    RowBox[{
+                    RowBox[{
+                    "MousePosition", "[", "\"\<EventHandlerAbsolute\>\"", 
+                    "]"}], "/", 
+                    RowBox[{"CurrentValue", "[", "Magnification", "]"}]}]}], 
+                    "]"}]}], ",", "\n", "                     ", 
+                    RowBox[{
+                    RowBox[{"mask", "[", 
+                    RowBox[{"[", "color", "]"}], "]"}], " ", "=", " ", 
+                    RowBox[{"ImageCompose", "[", 
+                    RowBox[{
+                    RowBox[{"mask", "[", 
+                    RowBox[{"[", "color", "]"}], "]"}], ",", " ", "pen", ",", 
+                    " ", 
+                    RowBox[{
+                    RowBox[{
+                    "MousePosition", "[", "\n", 
+                    "                             ", 
+                    "\"\<EventHandlerAbsolute\>\"", "]"}], "/", 
+                    RowBox[{"CurrentValue", "[", "Magnification", "]"}]}]}], 
+                    "]"}]}]}], "\n", "                     ", "]"}]}], 
+                   "}"}]}], "]"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"Style", "[", "\"\<   \>\"", "]"}], ",", 
+                "\[IndentingNewLine]", 
+                RowBox[{
+                 RowBox[{"If", "[", "\[IndentingNewLine]", 
+                  RowBox[{
+                   RowBox[{"sdTempVar", " ", "\[Equal]", 
+                    RowBox[{"{", "}"}]}], ",", "\[IndentingNewLine]", 
+                   RowBox[{"Style", "[", 
+                    RowBox[{
+                    "\"\<   Cannot display 3D Image because no tumors are \
+saved   \>\"", ",", " ", 
+                    RowBox[{"FontFamily", "\[Rule]", "\"\<Arial\>\""}], ",", 
+                    RowBox[{"FontSize", "\[Rule]", "13"}]}], "]"}], ",", 
+                   "\[IndentingNewLine]", 
+                   RowBox[{"Dynamic", "@", 
+                    RowBox[{"Image3D", "[", 
+                    RowBox[{
+                    RowBox[{"sdTempVar", "[", 
+                    RowBox[{"[", 
+                    RowBox[{
+                    "All", ",", " ", "1", ",", " ", "2", ",", " ", "2"}], 
+                    "]"}], "]"}], ",", 
+                    RowBox[{"ImageSize", "\[Rule]", "400"}]}], "]"}]}]}], 
+                  "\[IndentingNewLine]", "]"}], "\n", "             ", 
+                 "SpanFromLeft"}]}], "}"}]}], ",", "\n", "     ", 
+             RowBox[{"Row", "@", " ", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"Button", "[", 
+                 RowBox[{"\"\<Save tumor\>\"", ",", "\n", "        ", 
+                  RowBox[{
+                   RowBox[{"\"\<PixelSpacing\>\"", " ", "/.", " ", 
+                    RowBox[{"Map", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"Import", "[", 
+                    RowBox[{
+                    RowBox[{"sdFileNames", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"ToExpression", "@", 
+                    RowBox[{
+                    RowBox[{"sdTempVar", "[", 
+                    RowBox[{"[", "#", "]"}], "]"}], "[", 
+                    RowBox[{"[", 
+                    RowBox[{"1", ",", " ", "1", ",", " ", "2"}], "]"}], 
+                    "]"}]}], "]"}], "]"}], ",", " ", 
+                    "\"\<MetaInformation\>\""}], "]"}], " ", "&"}], ",", " ", 
+                    RowBox[{"Range", "[", 
+                    RowBox[{"Length", "@", "sdTempVar"}], "]"}]}], "]"}]}], 
+                   ";", "\n", "            ", 
+                   RowBox[{
+                    RowBox[{"AppendTo", "[", 
+                    RowBox[{"sdTempVar", ",", " ", 
+                    RowBox[{"Column", "@", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"Text", "[", "\"\<Slice Number:\>\"", "]"}], " ", 
+                    "->", " ", 
+                    RowBox[{"ToString", "[", "i", "]"}]}], ",", " ", 
+                    RowBox[{
+                    RowBox[{"Text", "[", "\"\<Image:\>\"", "]"}], " ", "->", 
+                    " ", 
+                    RowBox[{"Binarize", "@", 
+                    RowBox[{"Image", "[", "sdGcc", "]"}]}]}]}], "\n", 
+                    "            ", "}"}]}]}], "]"}], "\n", "         ", 
+                    "sdTempVar"}]}]}], "]"}], ",", "\n", "       ", 
+                RowBox[{"Button", "[", 
+                 RowBox[{
+                 "\"\<Clear previous selected tumor\>\"", ",", "\n", 
+                  "        ", 
+                  RowBox[{"If", "[", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"Length", "[", "sdTempVar", "]"}], " ", ">", " ", 
+                    "0"}], ",", " ", 
+                    RowBox[{"sdTempVar", " ", "=", " ", 
+                    RowBox[{"Delete", "[", 
+                    RowBox[{"sdTempVar", ",", " ", 
+                    RowBox[{"-", "1"}]}], "]"}]}]}], "]"}]}], "]"}], ",", 
+                "\n", "       ", 
+                RowBox[{"Button", "[", 
+                 RowBox[{"\"\<Clear all tumors\>\"", ",", "\n", "        ", 
+                  RowBox[{
+                   RowBox[{"sdTempVar", " ", "=", " ", 
+                    RowBox[{"{", "}"}]}], ";"}]}], "]"}], ",", "\n", 
+                "       ", 
+                RowBox[{"Button", "[", 
+                 RowBox[{"\"\<Done\>\"", ",", "\n", "        ", 
+                  RowBox[{
+                   RowBox[{"sdSliceNumbers", " ", "=", " ", 
+                    RowBox[{"Map", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"sdTempVar", "[", 
+                    RowBox[{"[", 
+                    RowBox[{
+                    "#", ",", " ", "1", ",", " ", "1", ",", " ", "2"}], "]"}],
+                     "]"}], " ", "&"}], ",", " ", 
+                    RowBox[{"Range", "[", 
+                    RowBox[{"Length", "@", "sdTempVar"}], "]"}]}], "]"}]}], 
+                   ";", "\n", "        ", 
+                   RowBox[{"sdNumberOfSlicesSelected", " ", "=", " ", 
+                    RowBox[{"Length", "@", "sdTempVar"}]}], ";", "\n", 
+                   "        ", 
+                   RowBox[{"sdSlicesSpacing", " ", "=", " ", 
+                    RowBox[{"\"\<SlicesSpacing\>\"", " ", "/.", " ", 
+                    RowBox[{"Map", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"Import", "[", 
+                    RowBox[{
+                    RowBox[{"sdFileNames", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"ToExpression", "@", 
+                    RowBox[{
+                    RowBox[{"sdTempVar", "[", 
+                    RowBox[{"[", "#", "]"}], "]"}], "[", 
+                    RowBox[{"[", 
+                    RowBox[{"1", ",", " ", "1", ",", " ", "2"}], "]"}], 
+                    "]"}]}], "]"}], "]"}], ",", " ", 
+                    "\"\<MetaInformation\>\""}], "]"}], " ", "&"}], ",", " ", 
+                    RowBox[{"Range", "[", 
+                    RowBox[{"Length", "@", "sdTempVar"}], "]"}]}], "]"}]}]}], 
+                   ";", "\n", "        ", 
+                   RowBox[{"sdPixelSpacing", " ", "=", " ", 
+                    RowBox[{"\"\<PixelSpacing\>\"", " ", "/.", " ", 
+                    RowBox[{"Map", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"Import", "[", 
+                    RowBox[{
+                    RowBox[{"sdFileNames", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"ToExpression", "@", 
+                    RowBox[{
+                    RowBox[{"sdTempVar", "[", 
+                    RowBox[{"[", "#", "]"}], "]"}], "[", 
+                    RowBox[{"[", 
+                    RowBox[{"1", ",", " ", "1", ",", " ", "2"}], "]"}], 
+                    "]"}]}], "]"}], "]"}], ",", " ", 
+                    "\"\<MetaInformation\>\""}], "]"}], " ", "&"}], ",", " ", 
+                    RowBox[{"Range", "[", 
+                    RowBox[{"Length", "@", "sdTempVar"}], "]"}]}], "]"}]}]}], 
+                   ";", "\n", "        ", 
+                   RowBox[{"sdPixelArea", " ", "=", " ", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"Flatten", "[", "sdPixelSpacing", "]"}], "[", 
+                    RowBox[{"[", "1", "]"}], "]"}], "*", 
+                    RowBox[{
+                    RowBox[{"Flatten", "[", "sdPixelSpacing", "]"}], "[", 
+                    RowBox[{"[", "2", "]"}], "]"}]}]}], ";", "\n", "        ", 
+                   RowBox[{"sdAreaOfEachSavedSlice", " ", "=", " ", 
+                    RowBox[{
+                    RowBox[{"Map", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"ToExpression", "@", 
+                    RowBox[{
+                    RowBox[{
+                    "ComponentMeasurements", "[", "\n", "               ", 
+                    RowBox[{
+                    RowBox[{"sdTempVar", "[", 
+                    RowBox[{"[", 
+                    RowBox[{
+                    "#", ",", " ", "1", ",", " ", "2", ",", " ", "2"}], "]"}],
+                     "]"}], "\n", "               ", ",", " ", 
+                    "\"\<Area\>\""}], "]"}], "[", 
+                    RowBox[{"[", 
+                    RowBox[{"1", ",", " ", "2"}], "]"}], "]"}]}], " ", "&"}], 
+                    ",", " ", 
+                    RowBox[{"Range", "[", 
+                    RowBox[{"Length", "@", "sdTempVar"}], "]"}]}], "]"}], "*",
+                     "sdPixelArea"}]}], ";", "\n", "        ", 
+                   RowBox[{"sdVolumeOfEachSavedSlice", " ", "=", " ", 
+                    RowBox[{"Map", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"sdSlicesSpacing", "[", 
+                    RowBox[{"[", "#", "]"}], "]"}], "*", 
+                    RowBox[{"sdAreaOfEachSavedSlice", "[", 
+                    RowBox[{"[", "#", "]"}], "]"}]}], " ", "&"}], ",", " ", 
+                    RowBox[{"Range", "[", 
+                    RowBox[{"Length", "@", "sdTempVar"}], "]"}]}], "]"}]}], 
+                   ";", "\n", "        ", 
+                   RowBox[{"sdTotalVolume", " ", "=", " ", 
+                    RowBox[{"Total", "[", "sdVolumeOfEachSavedSlice", "]"}]}],
+                    ";", "\n", "        ", 
+                   RowBox[{"Delete", "[", 
+                    RowBox[{"sdTempVar2", ",", " ", "1"}], "]"}], ";", "\n", 
+                   "         ", 
+                   RowBox[{"AppendTo", "[", 
+                    RowBox[{"sdTempVar2", ",", " ", 
+                    RowBox[{"Column", "@", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    "Text", "[", "\"\<Total number of slices selected:\>\"", 
+                    "]"}], " ", "->", " ", 
+                    RowBox[{
+                    "ToString", "[", "sdNumberOfSlicesSelected", "]"}]}], ",",
+                     "\n", "           ", 
+                    RowBox[{
+                    RowBox[{"Text", "[", "\"\<Slice numbers\>\"", "]"}], " ", 
+                    "->", " ", 
+                    RowBox[{"ToString", "[", "sdSliceNumbers", "]"}]}], ",", 
+                    "\n", "           ", 
+                    RowBox[{
+                    RowBox[{
+                    "Text", "[", "\"\<Thickness of each slice: (mm)\>\"", 
+                    "]"}], " ", "->", " ", 
+                    RowBox[{"ToString", "[", "sdSlicesSpacing", "]"}]}], ",", 
+                    "\n", "           ", 
+                    RowBox[{
+                    RowBox[{
+                    "Text", "[", "\"\<Area of each slice (mm^2)\>\"", "]"}], 
+                    " ", "->", " ", "sdAreaOfEachSavedSlice"}], ",", "\n", 
+                    "           ", 
+                    RowBox[{
+                    RowBox[{
+                    "Text", "[", "\"\<Total Volume: (mm^3)\>\"", "]"}], " ", "->",
+                     " ", 
+                    RowBox[{"ToString", "[", "sdTotalVolume", "]"}]}]}], "\n",
+                     "           ", "}"}]}]}], "]"}], ";", "\n", "        ", 
+                   "sdTempVar2"}], ",", "\[IndentingNewLine]", 
+                  RowBox[{"Background", " ", "->", " ", 
+                   RowBox[{"Lighter", "[", 
+                    RowBox[{"Blue", ",", " ", "0.6"}], "]"}]}]}], "\n", 
+                 "        ", "]"}], ",", "\n", "       ", 
+                RowBox[{"Button", "[", 
+                 RowBox[{"\"\<Save Separately\>\"", ",", "\n", "        ", 
+                  RowBox[{"CreateDocument", "[", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"TextCell", "[", 
+                    RowBox[{
+                    RowBox[{"StringJoin", "[", 
+                    RowBox[{"\"\<Created By:  \>\"", ",", " ", 
+                    RowBox[{"ToString", "[", "sdNameOfDoctor", "]"}]}], "]"}],
+                     ",", " ", "\"\<Title\>\""}], "]"}], ",", " ", 
+                    RowBox[{"TextCell", "[", 
+                    RowBox[{
+                    RowBox[{"StringJoin", "[", 
+                    RowBox[{"\"\<Date:  \>\"", ",", " ", 
+                    RowBox[{"ToString", "@", 
+                    RowBox[{"DateString", "[", "]"}]}]}], "]"}], "\n", 
+                    "           ", ",", " ", "\"\<Subsection\>\""}], "]"}], 
+                    ",", " ", 
+                    RowBox[{"Image3D", "[", 
+                    RowBox[{"sdTempVar", "[", 
+                    RowBox[{"[", 
+                    RowBox[{
+                    "All", ",", " ", "1", ",", " ", "2", ",", " ", "2"}], 
+                    "]"}], "]"}], "]"}], ",", " ", 
+                    RowBox[{"Delete", "[", 
+                    RowBox[{"sdTempVar2", ",", " ", "1"}], "]"}]}], "}"}], 
+                   "]"}], ",", " ", 
+                  RowBox[{"Background", " ", "->", " ", 
+                   RowBox[{"Lighter", "[", 
+                    RowBox[{"Blue", ",", " ", "0.6"}], "]"}]}]}], "]"}]}], 
+               "}"}]}]}], "}"}], ",", "Center"}], "]"}], "\n", "    ", 
+         "]"}]}]}]}], "]"}], ",", " ", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"i", ",", " ", 
+        RowBox[{"Length", "@", "sdSlicesIrregularRaw"}]}], "}"}], ",", " ", 
+      "1", ",", " ", 
+      RowBox[{"Length", "[", "sdSlicesIrregularRaw", "]"}], ",", " ", "1"}], 
+     "}"}]}], "]"}], "  "}], "\n", 
+ RowBox[{"Dynamic", "[", "sdTempVar", "]"}], "\n", 
+ RowBox[{
+  RowBox[{"sdTempVar2", " ", "=", " ", 
+   RowBox[{"{", "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"AppendTo", "[", 
+   RowBox[{"sdTempVar2", ",", " ", 
+    RowBox[{"Column", "@", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+        "Text", "[", "\"\<Total number of slices selected:\>\"", "]"}], " ", "->",
+         " ", 
+        RowBox[{"ToString", "[", "sdNumberOfSlicesSelected", "]"}]}], ",", 
+       " ", 
+       RowBox[{
+        RowBox[{"Text", "[", "\"\<Area of each slice\>\"", "]"}], " ", "->", 
+        " ", "sdAreaOfEachSavedSlice"}], ",", " ", 
+       RowBox[{
+        RowBox[{"Text", "[", "\"\<Thickness of each slice (mm):\>\"", "]"}], 
+        " ", "->", " ", 
+        RowBox[{"ToString", "[", "sdSlicesSpacing", "]"}]}], ",", " ", 
+       RowBox[{
+        RowBox[{"Text", "[", "\"\<Total Volume:\>\"", "]"}], " ", "->", " ", 
+        RowBox[{"ToString", "[", "sdTotalVolume", "]"}]}]}], "}"}]}]}], "]"}],
+   ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Dynamic", "@", 
+   RowBox[{"Delete", "[", 
+    RowBox[{"sdTempVar2", ",", " ", "1"}], "]"}]}], "\n"}], "\n"}], "Input",
+ CellChangeTimes->{{3.649797621944016*^9, 3.649797626427001*^9}, {
+   3.6497977685737057`*^9, 3.6497977787835083`*^9}, {3.649797826075019*^9, 
+   3.6497978670162954`*^9}, {3.649797945766763*^9, 3.6497980103808117`*^9}, 
+   3.650334090508546*^9, {3.65033540642451*^9, 3.650335411492871*^9}, 
+   3.650568086023281*^9, {3.650568782086157*^9, 3.650568867869957*^9}, {
+   3.6505689466691337`*^9, 3.650569073466092*^9}, {3.6505691120946703`*^9, 
+   3.65056919140919*^9}, {3.650569224737258*^9, 3.6505693027739305`*^9}, {
+   3.6505693374789143`*^9, 3.6505694075463057`*^9}, {3.6505694405961933`*^9, 
+   3.6505695153847094`*^9}, {3.6512571239264774`*^9, 3.651257126294042*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`i$$ = 133, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`i$$], 196}, 1, 196, 1}}, Typeset`size$$ = {
+    477., {320., 328.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`i$346281$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`i$$ = 196}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`i$$, $CellContext`i$346281$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      DynamicModule[{$CellContext`pen, $CellContext`erasor, \
+$CellContext`segmentation, $CellContext`mask, $CellContext`color, \
+$CellContext`img = ImageAdjust[
+           
+           Part[$CellContext`sdSlicesIrregularRaw, $CellContext`i$$]]}, \
+$CellContext`pen = Map[SetAlphaChannel[#, #]& , 
+           Image[
+            DiskMatrix[1.6], "Bit"]]; $CellContext`erasor = 
+         ColorNegate[$CellContext`pen]; $CellContext`segmentation = 
+         ConstantImage[1, 
+           ImageDimensions[$CellContext`img]]; $CellContext`mask = Table[
+           ConstantImage[0, 
+            ImageDimensions[$CellContext`img], "Bit"], {3}]; Deploy[
+          Panel[
+           Column[{
+             Row[{
+               SetterBar[
+                Dynamic[$CellContext`color], {
+                1 -> "Background", 2 -> "Foreground"}], 
+               Button[
+               "Clear Background / Foreground", $CellContext`mask = Table[
+                   ConstantImage[0, 
+                    ImageDimensions[$CellContext`img], "Bit"], {
+                   3}]; $CellContext`segmentation = ConstantImage[255, 
+                   ImageDimensions[$CellContext`img], "Byte"]], 
+               Button["Grow Cut", 
+                If[
+                 Not[
+                  Apply[And, 
+                   Map[
+                   ImageMeasurements[#, "Max"] == 
+                    0& , $CellContext`mask]]], $CellContext`sdGcc = 
+                  GrowCutComponents[$CellContext`img, $CellContext`mask, 
+                    MaxIterations -> 256] - 1; $CellContext`segmentation = 
+                  ImageCompose[
+                    Image[
+                    GrowCutComponents[$CellContext`img, $CellContext`mask, 
+                    MaxIterations -> 256] - 0.5], 
+                    Dynamic[
+                    Graphics[
+                    Style[
+                    Text[" ", $CellContext`areaTextCoord = {Part[
+                    Dimensions[$CellContext`sdGcc], 1]/4.3, Part[
+                    Dimensions[$CellContext`sdGcc], 2]/12}], Bold, FontSize -> 
+                    15, FontColor -> White, FontFamily -> "Calisto MT"], 
+                    PlotRange -> {{0, 
+                    Part[
+                    Dimensions[$CellContext`sdGcc], 2]}, {0, 
+                    Part[
+                    Dimensions[$CellContext`sdGcc], 2]}}, PlotRangeClipping -> 
+                    True, Frame -> True]]]; $CellContext`mask = Table[
+                    ConstantImage[0, 
+                    ImageDimensions[$CellContext`img], "Bit"], {3}]]]}], 
+             Row[{
+               EventHandler[
+                Dynamic[
+                 Deploy[
+                  Image[
+                   ImageCompose[
+                    
+                    SetAlphaChannel[$CellContext`img, \
+$CellContext`segmentation], 
+                    SetAlphaChannel[
+                    ColorCombine[$CellContext`mask], 
+                    Apply[ImageAdd, $CellContext`mask]]], ImageSize -> 
+                   ImageDimensions[$CellContext`img]]]], {"MouseDragged" :> If[
+                   CurrentValue["ShiftKey"], 
+                   Part[$CellContext`mask, $CellContext`color] = ImageCompose[
+                    
+                    Part[$CellContext`mask, $CellContext`color], \
+$CellContext`erasor, MousePosition["EventHandlerAbsolute"]/CurrentValue[
+                    Magnification]], 
+                   Part[$CellContext`mask, $CellContext`color] = ImageCompose[
+                    
+                    Part[$CellContext`mask, $CellContext`color], \
+$CellContext`pen, MousePosition["EventHandlerAbsolute"]/CurrentValue[
+                    Magnification]]]}], 
+               Style["   "], If[$CellContext`sdTempVar == {}, 
+                 Style[
+                 "   Cannot display 3D Image because no tumors are saved   ", 
+                  FontFamily -> "Arial", FontSize -> 13], 
+                 Dynamic[
+                  Image3D[
+                   Part[$CellContext`sdTempVar, All, 1, 2, 2], ImageSize -> 
+                   400]]] SpanFromLeft}], 
+             Row[{
+               Button["Save tumor", ReplaceAll["PixelSpacing", 
+                  Map[Import[
+                    Part[$CellContext`sdFileNames, 
+                    ToExpression[
+                    Part[
+                    Part[$CellContext`sdTempVar, #], 1, 1, 2]]], 
+                    "MetaInformation"]& , 
+                   Range[
+                    Length[$CellContext`sdTempVar]]]]; 
+                AppendTo[$CellContext`sdTempVar, 
+                   
+                   Column[{
+                    Text["Slice Number:"] -> ToString[$CellContext`i$$], 
+                    Text["Image:"] -> Binarize[
+                    Image[$CellContext`sdGcc]]}]] $CellContext`sdTempVar], 
+               Button["Clear previous selected tumor", 
+                If[
+                Length[$CellContext`sdTempVar] > 0, $CellContext`sdTempVar = 
+                 Delete[$CellContext`sdTempVar, -1]]], 
+               Button["Clear all tumors", $CellContext`sdTempVar = {}; Null], 
+               Button[
+               "Done", $CellContext`sdSliceNumbers = 
+                 Map[Part[$CellContext`sdTempVar, #, 1, 1, 2]& , 
+                   Range[
+                    
+                    Length[$CellContext`sdTempVar]]]; \
+$CellContext`sdNumberOfSlicesSelected = 
+                 Length[$CellContext`sdTempVar]; $CellContext`sdSlicesSpacing = 
+                 ReplaceAll["SlicesSpacing", 
+                   Map[Import[
+                    Part[$CellContext`sdFileNames, 
+                    ToExpression[
+                    Part[
+                    Part[$CellContext`sdTempVar, #], 1, 1, 2]]], 
+                    "MetaInformation"]& , 
+                    Range[
+                    
+                    Length[$CellContext`sdTempVar]]]]; \
+$CellContext`sdPixelSpacing = ReplaceAll["PixelSpacing", 
+                   Map[Import[
+                    Part[$CellContext`sdFileNames, 
+                    ToExpression[
+                    Part[
+                    Part[$CellContext`sdTempVar, #], 1, 1, 2]]], 
+                    "MetaInformation"]& , 
+                    Range[
+                    
+                    Length[$CellContext`sdTempVar]]]]; \
+$CellContext`sdPixelArea = Part[
+                    Flatten[$CellContext`sdPixelSpacing], 1] Part[
+                    Flatten[$CellContext`sdPixelSpacing], 
+                    2]; $CellContext`sdAreaOfEachSavedSlice = Map[ToExpression[
+                    Part[
+                    ComponentMeasurements[
+                    Part[$CellContext`sdTempVar, #, 1, 2, 2], "Area"], 1, 
+                    2]]& , 
+                    Range[
+                    
+                    Length[$CellContext`sdTempVar]]] $CellContext`sdPixelArea; \
+$CellContext`sdVolumeOfEachSavedSlice = 
+                 Map[Part[$CellContext`sdSlicesSpacing, #] 
+                   Part[$CellContext`sdAreaOfEachSavedSlice, #]& , 
+                   Range[
+                    
+                    Length[$CellContext`sdTempVar]]]; \
+$CellContext`sdTotalVolume = Total[$CellContext`sdVolumeOfEachSavedSlice]; 
+                Delete[$CellContext`sdTempVar2, 1]; 
+                AppendTo[$CellContext`sdTempVar2, 
+                  
+                  Column[{
+                   Text["Total number of slices selected:"] -> 
+                    ToString[$CellContext`sdNumberOfSlicesSelected], 
+                    Text["Slice numbers"] -> 
+                    ToString[$CellContext`sdSliceNumbers], 
+                    Text["Thickness of each slice: (mm)"] -> 
+                    ToString[$CellContext`sdSlicesSpacing], 
+                    Text["Area of each slice (mm^2)"] -> \
+$CellContext`sdAreaOfEachSavedSlice, Text["Total Volume: (mm^3)"] -> 
+                    
+                    ToString[$CellContext`sdTotalVolume]}]]; \
+$CellContext`sdTempVar2, Background -> Lighter[Blue, 0.6]], 
+               Button["Save Separately", 
+                CreateDocument[{
+                  TextCell[
+                   StringJoin["Created By:  ", 
+                    ToString[$CellContext`sdNameOfDoctor]], "Title"], 
+                  TextCell[
+                   StringJoin["Date:  ", 
+                    ToString[
+                    DateString[]]], "Subsection"], 
+                  Image3D[
+                   Part[$CellContext`sdTempVar, All, 1, 2, 2]], 
+                  Delete[$CellContext`sdTempVar2, 1]}], Background -> 
+                Lighter[Blue, 0.6]]}]}, Center]]]], 
+      "Specifications" :> {{{$CellContext`i$$, 196}, 1, 196, 1}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{528., {380., 387.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.6503370626898456`*^9, 3.650337835868878*^9, 3.650567948929505*^9, 
+   3.650568056826949*^9, 3.65056815014471*^9, 3.6505681819998035`*^9, 
+   3.650568932111492*^9, 3.650569103300847*^9, 3.6505693306083603`*^9, {
+   3.650569560907854*^9, 3.6505695889974556`*^9}, 3.650570724641801*^9, 
+   3.650570832611294*^9, 3.6512538097240458`*^9, 3.651253872785728*^9, 
+   3.6512570501106915`*^9, 3.6512571296392527`*^9}],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[$CellContext`sdTempVar, StandardForm],
+  ImageSizeCache->{642.5, {274.5, 85.5}}]], "Output",
+ CellChangeTimes->{
+  3.6503370626898456`*^9, 3.650337835868878*^9, 3.650567948929505*^9, 
+   3.650568056826949*^9, 3.65056815014471*^9, 3.6505681819998035`*^9, 
+   3.650568932111492*^9, 3.650569103300847*^9, 3.6505693306083603`*^9, {
+   3.650569560907854*^9, 3.6505695889974556`*^9}, 3.650570724641801*^9, 
+   3.650570832611294*^9, 3.6512538097240458`*^9, 3.651253872785728*^9, 
+   3.6512570501106915`*^9, 3.651257129752327*^9}],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[
+   Delete[$CellContext`sdTempVar2, 1], StandardForm],
+  ImageSizeCache->{16., {2., 8.}}]], "Output",
+ CellChangeTimes->{
+  3.6503370626898456`*^9, 3.650337835868878*^9, 3.650567948929505*^9, 
+   3.650568056826949*^9, 3.65056815014471*^9, 3.6505681819998035`*^9, 
+   3.650568932111492*^9, 3.650569103300847*^9, 3.6505693306083603`*^9, {
+   3.650569560907854*^9, 3.6505695889974556`*^9}, 3.650570724641801*^9, 
+   3.650570832611294*^9, 3.6512538097240458`*^9, 3.651253872785728*^9, 
+   3.6512570501106915`*^9, 3.65125712975533*^9}]
+}, Open  ]]
+},
+WindowSize->{900, 1357},
+WindowMargins->{{-908, Automatic}, {47, Automatic}},
+FrontEndVersion->"10.2 for Microsoft Windows (64-bit) (July 7, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 2130, 48, 208, "Input"],
+Cell[2713, 72, 2083, 40, 35, "Output"],
+Cell[4799, 114, 1553, 26, 67, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6389, 145, 27337, 580, 2252, "Input"],
+Cell[33729, 727, 10445, 218, 784, "Output"],
+Cell[44177, 947, 556, 9, 377, "Output"],
+Cell[44736, 958, 564, 10, 31, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
