@@ -10,5 +10,9 @@ Run 'GUI tumor detect.nb'
 
 Video Instructions: https://www.youtube.com/watch?v=KZ2URsd9E3s
 
+<a href="https://www.youtube.com/watch?v=KZ2URsd9E3s
+" target="_blank"><img src="http://img.youtube.com/watch?v=KZ2URsd9E3s/0.jpg" 
+alt="Video Instructions" width="240" height="180" border="10" /></a>
+
 ### Author: ###
 Justin Lee
